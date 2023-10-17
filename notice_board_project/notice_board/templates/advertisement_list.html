@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Advertisement List</h2>
+{% for advertisement in advertisements %}
+<div>
+    <h3>{{ advertisement.title }}</h3>
+    <p>{{ advertisement.content }}</p>
+    <p>Category: {{ advertisement.category.name }}</p>
+    <a href="{% url 'create_response' advertisement.id %}">Create Response</a>
+</div>
+{% endfor %}
+{% endblock %}

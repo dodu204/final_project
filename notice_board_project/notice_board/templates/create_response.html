@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Create Response</h2>
+<form method="post" action="{% url 'create_response' advertisement.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Response</button>
+</form>
+{% endblock %}
